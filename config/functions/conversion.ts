@@ -43,31 +43,31 @@ const colors = {
 };
 
 // Example usage:
-const jsonResponse: JSONResponse = {
-    "status": true,
-    "response": [
-        [
-            {
-                "Key1": "val1",
-                "Key2": "val2",
-            },
-            {
-                "Key1": "val3",
-                "Key2": "val4",
-            },
-        ],
-        [
-            {
-                "Key1": "val5",
-                "Key2": "val6",
-            },
-            {
-                "Key1": "val7",
-                "Key2": "val8",
-            },
-        ],
-    ],
-};
+// const jsonResponse: JSONResponse = {
+//     "status": true,
+//     "response": [
+//         [
+//             {
+//                 "Key1": "val1",
+//                 "Key2": "val2",
+//             },
+//             {
+//                 "Key1": "val3",
+//                 "Key2": "val4",
+//             },
+//         ],
+//         [
+//             {
+//                 "Key1": "val5",
+//                 "Key2": "val6",
+//             },
+//             {
+//                 "Key1": "val7",
+//                 "Key2": "val8",
+//             },
+//         ],
+//     ],
+// };
 
-const convertedData = convertJSONResponse(jsonResponse);
-console.log(convertedData);
+// const convertedData = convertJSONResponse(jsonResponse);
+// console.log(convertedData);
