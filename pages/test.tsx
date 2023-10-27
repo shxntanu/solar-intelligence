@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { SetStateAction } from "react";
 import {
     Card,
     CardHeader,
@@ -27,10 +28,25 @@ import { Bar } from "react-chartjs-2";
 import CardHolder from "@/components/CardHolder";
 import { convertJSONResponse } from "@/config/functions/conversion";
 import { convertResponseToFormattedData } from "@/config/functions/conversion-v2";
+import { ApiService } from "@/config/api/ApiService";
 
 import * as globalRes from "@/constants/global.json";
 import * as regionRes from "@/constants/regions.json";
 import * as numericRes from "@/constants/numeric.json";
+
+interface FormData {
+    isGlobal: boolean;
+    region?: string;
+    category: string;
+    numeric: string;
+}
+
+const initialState: FormData = {
+    isGlobal: true,
+    region: undefined,
+    category: "",
+    numeric: "",
+};
 
 ChartJS.register(
     CategoryScale,
@@ -54,15 +70,70 @@ export const options = {
     },
 };
 
-export const data = convertResponseToFormattedData(globalRes);
+const states = [
+    "Telangana",
+    "Tamil Nadu",
+    "Rajasthan",
+    "Karnataka",
+    "Kerala",
+    "Delhi",
+    "Maharashtra",
+    "Uttar Pradesh",
+    "West Bengal",
+    "Gujarat",
+];
 
 function RenderingInIFrame() {
-    const [selectedKeys, setSelectedKeys] = React.useState(new Set(["text"]));
+    const [data, setData] = useState(convertResponseToFormattedData(globalRes));
+    const [region, setRegion] = useState("global");
+    const [state, setState] = useState(undefined);
+    const [category, setCategory] = useState(undefined);
+    const [numericData, setNumericData] = useState(undefined);
+    const [formState, setFormState] = useState<FormData>(initialState);
 
-    const selectedValue = React.useMemo(
-        () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
-        [selectedKeys]
-    );
+    const handleSubmit = async () => {
+        console.log({
+            region,
+            state,
+            category,
+            numericData,
+        });
+
+
+        // if (region === "global") {
+        //     if (category && numericData) {
+        //         ApiService.get(`global/${category}/${numericData}`).then(
+        //             (res) => {
+        //                 setData(convertResponseToFormattedData(res.data));
+        //             }
+        //         );
+        //     } else if (category) {
+        //         ApiService.get(`global/${category}`).then((res) => {
+        //             setData(convertResponseToFormattedData(res.data));
+        //         });
+        //     } else {
+        //         ApiService.get(`global`).then((res) => {
+        //             setData(convertResponseToFormattedData(res.data));
+        //         });
+        //     }
+        // } else {
+        //     if (category && numericData) {
+        //         ApiService.get(
+        //             `region/${state}/${category}/${numericData}`
+        //         ).then((res) => {
+        //             setData(convertResponseToFormattedData(res.data));
+        //         });
+        //     } else if (category) {
+        //         ApiService.get(`region/${state}/${category}`).then((res) => {
+        //             setData(convertResponseToFormattedData(res.data));
+        //         });
+        //     } else {
+        //         ApiService.get(`region`).then((res) => {
+        //             setData(convertResponseToFormattedData(res.data));
+        //         });
+        //     }
+        // }
+    };
 
     return (
         <div>
@@ -71,17 +142,12 @@ function RenderingInIFrame() {
                     <CardHeader className="flex flex-col gap-3 pt-10">
                         <div className="flex flex-col text-center">
                             <p className="text-md">PageTalk</p>
-                            <p className="text-small text-default-500">
-                                {/* {isLogin ? "Login" : "Sign Up"} */}
-                                Test
-                            </p>
+                            <p className="text-small text-default-500">Test</p>
                         </div>
                     </CardHeader>
 
                     <div className="max-h-[60vh] overflow-y-auto">
-                        <form
-                        // onSubmit={handleFormSubmit}
-                        >
+                        <form>
                             <CardBody className="items-center flex flex-col gap-3">
                                 <Dropdown>
                                     <DropdownTrigger>
@@ -89,7 +155,7 @@ function RenderingInIFrame() {
                                             variant="bordered"
                                             className="capitalize"
                                         >
-                                            {selectedValue}
+                                            {region}
                                         </Button>
                                     </DropdownTrigger>
                                     <DropdownMenu
@@ -97,10 +163,19 @@ function RenderingInIFrame() {
                                         variant="flat"
                                         disallowEmptySelection
                                         selectionMode="single"
-                                        selectedKeys={selectedKeys}
-                                        onSelectionChange={() =>
-                                            setSelectedKeys
-                                        }
+                                        selectedKeys={region}
+                                        onSelectionChange={(value) => {
+                                            setFormState((prevState) => {
+                                                return {
+                                                    ...prevState,
+                                                    isGlobal:
+                                                        !prevState.isGlobal,
+                                                };
+                                            });
+                                            setRegion(
+                                                value.valueOf() as SetStateAction<string>
+                                            );
+                                        }}
                                     >
                                         <DropdownItem key="regional">
                                             Regional
@@ -110,13 +185,54 @@ function RenderingInIFrame() {
                                         </DropdownItem>
                                     </DropdownMenu>
                                 </Dropdown>
+                                {!formState.isGlobal && (
+                                    <Dropdown>
+                                        <DropdownTrigger>
+                                            <Button
+                                                variant="bordered"
+                                                className="capitalize"
+                                            >
+                                                {state}
+                                            </Button>
+                                        </DropdownTrigger>
+                                        <DropdownMenu
+                                            aria-label="Single selection example"
+                                            variant="flat"
+                                            disallowEmptySelection
+                                            selectionMode="single"
+                                            selectedKeys={state}
+                                            placeholder="Select a region"
+                                            onSelectionChange={(value) => {
+                                                setFormState((prevState) => {
+                                                    return {
+                                                        ...prevState,
+                                                        region: value
+                                                            .valueOf()
+                                                            .toString(),
+                                                    };
+                                                });
+                                                setState(
+                                                    value.valueOf() as SetStateAction<undefined>
+                                                );
+                                            }}
+                                        >
+                                            {states.map((state) => {
+                                                return (
+                                                    <DropdownItem key={state}>
+                                                        {state}
+                                                    </DropdownItem>
+                                                );
+                                            })}
+                                        </DropdownMenu>
+                                    </Dropdown>
+                                )}
                                 <Dropdown>
                                     <DropdownTrigger>
                                         <Button
                                             variant="bordered"
                                             className="capitalize"
                                         >
-                                            {selectedValue}
+                                            {category}
                                         </Button>
                                     </DropdownTrigger>
                                     <DropdownMenu
@@ -124,25 +240,24 @@ function RenderingInIFrame() {
                                         variant="flat"
                                         disallowEmptySelection
                                         selectionMode="single"
-                                        selectedKeys={selectedKeys}
-                                        onSelectionChange={() =>
-                                            setSelectedKeys
-                                        }
+                                        selectedKeys={category}
+                                        onSelectionChange={(value) => {
+                                            setCategory(
+                                                value.valueOf() 
+                                            );
+                                        }}
                                     >
-                                        <DropdownItem key="text">
-                                            Text
+                                        <DropdownItem key="installationtype">
+                                            Installation Type
                                         </DropdownItem>
-                                        <DropdownItem key="number">
-                                            Number
+                                        <DropdownItem key="paneltype">
+                                            Panel Type
                                         </DropdownItem>
-                                        <DropdownItem key="date">
-                                            Date
+                                        <DropdownItem key="typeofinstallation">
+                                            Type of Installation
                                         </DropdownItem>
-                                        <DropdownItem key="single_date">
-                                            Single Date
-                                        </DropdownItem>
-                                        <DropdownItem key="iteration">
-                                            Iteration
+                                        <DropdownItem key="installername">
+                                            Installer Name
                                         </DropdownItem>
                                     </DropdownMenu>
                                 </Dropdown>
@@ -152,7 +267,7 @@ function RenderingInIFrame() {
                                             variant="bordered"
                                             className="capitalize"
                                         >
-                                            {selectedValue}
+                                            {numericData}
                                         </Button>
                                     </DropdownTrigger>
                                     <DropdownMenu
@@ -160,65 +275,38 @@ function RenderingInIFrame() {
                                         variant="flat"
                                         disallowEmptySelection
                                         selectionMode="single"
-                                        selectedKeys={selectedKeys}
-                                        onSelectionChange={() =>
-                                            setSelectedKeys
-                                        }
+                                        selectedKeys={numericData}
+                                        onSelectionChange={(value) => {
+                                            setNumericData(
+                                                value.valueOf() as SetStateAction<undefined>
+                                            );
+                                        }}
                                     >
-                                        <DropdownItem key="text">
-                                            Text
+                                        <DropdownItem key="capacity">
+                                            Capacity
                                         </DropdownItem>
-                                        <DropdownItem key="number">
-                                            Number
+                                        <DropdownItem key="energyproduced">
+                                            Energy Produced
                                         </DropdownItem>
-                                        <DropdownItem key="date">
-                                            Date
+                                        <DropdownItem key="maintenancefrequency">
+                                            Maintenance Frequency
                                         </DropdownItem>
-                                        <DropdownItem key="single_date">
-                                            Single Date
+                                        <DropdownItem key="cost">
+                                            Cost
                                         </DropdownItem>
-                                        <DropdownItem key="iteration">
-                                            Iteration
+                                        <DropdownItem key="warrantyyears">
+                                            Warranty Years
+                                        </DropdownItem>
+                                        <DropdownItem key="annualsavings">
+                                            Annual Savings
                                         </DropdownItem>
                                     </DropdownMenu>
                                 </Dropdown>
-                                <Dropdown>
-                                    <DropdownTrigger>
-                                        <Button
-                                            variant="bordered"
-                                            className="capitalize"
-                                        >
-                                            {selectedValue}
-                                        </Button>
-                                    </DropdownTrigger>
-                                    <DropdownMenu
-                                        aria-label="Single selection example"
-                                        variant="flat"
-                                        disallowEmptySelection
-                                        selectionMode="single"
-                                        selectedKeys={selectedKeys}
-                                        onSelectionChange={() =>
-                                            setSelectedKeys
-                                        }
-                                    >
-                                        <DropdownItem key="text">
-                                            Text
-                                        </DropdownItem>
-                                        <DropdownItem key="number">
-                                            Number
-                                        </DropdownItem>
-                                        <DropdownItem key="date">
-                                            Date
-                                        </DropdownItem>
-                                        <DropdownItem key="single_date">
-                                            Single Date
-                                        </DropdownItem>
-                                        <DropdownItem key="iteration">
-                                            Iteration
-                                        </DropdownItem>
-                                    </DropdownMenu>
-                                </Dropdown>
-                                <Button color="primary" type="submit">
+                                <Button
+                                    color="primary"
+                                    type="submit"
+                                    onPress={handleSubmit}
+                                >
                                     <p className="text-white">Sign In</p>
                                 </Button>
                             </CardBody>
