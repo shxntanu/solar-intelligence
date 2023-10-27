@@ -57,14 +57,12 @@ export const options = {
 export const data = convertResponseToFormattedData(globalRes);
 
 function RenderingInIFrame() {
-    // const [dataset, setDataset] = useState(data.datasets);
-    // const [labels, setLabels] = useState(data.labels);
+    const [selectedKeys, setSelectedKeys] = React.useState(new Set(["text"]));
 
-    const [dropdowns, setDropdowns] = useState([
-        {
-            
-        }
-    ])
+    const selectedValue = React.useMemo(
+        () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
+        [selectedKeys]
+    );
 
     return (
         <div>
@@ -85,25 +83,141 @@ function RenderingInIFrame() {
                         // onSubmit={handleFormSubmit}
                         >
                             <CardBody className="items-center flex flex-col gap-3">
-                                <Input
-                                    type="text"
-                                    label="Username"
-                                    className="w-[300px]"
-                                    name="username"
-                                    // isInvalid={invalidPassword}
-                                    // value={formData.username}
-                                    // onChange={handleInputChange}
-                                />
-                                <Input
-                                    type="password"
-                                    label="Password"
-                                    className="w-[300px]"
-                                    name="password"
-                                    // isInvalid={invalidPassword}
-                                    // errorMessage={errorText}
-                                    // value={formData.password}
-                                    // onChange={handleInputChange}
-                                />
+                                <Dropdown>
+                                    <DropdownTrigger>
+                                        <Button
+                                            variant="bordered"
+                                            className="capitalize"
+                                        >
+                                            {selectedValue}
+                                        </Button>
+                                    </DropdownTrigger>
+                                    <DropdownMenu
+                                        aria-label="Single selection example"
+                                        variant="flat"
+                                        disallowEmptySelection
+                                        selectionMode="single"
+                                        selectedKeys={selectedKeys}
+                                        onSelectionChange={() =>
+                                            setSelectedKeys
+                                        }
+                                    >
+                                        <DropdownItem key="regional">
+                                            Regional
+                                        </DropdownItem>
+                                        <DropdownItem key="global">
+                                            Global
+                                        </DropdownItem>
+                                    </DropdownMenu>
+                                </Dropdown>
+                                <Dropdown>
+                                    <DropdownTrigger>
+                                        <Button
+                                            variant="bordered"
+                                            className="capitalize"
+                                        >
+                                            {selectedValue}
+                                        </Button>
+                                    </DropdownTrigger>
+                                    <DropdownMenu
+                                        aria-label="Single selection example"
+                                        variant="flat"
+                                        disallowEmptySelection
+                                        selectionMode="single"
+                                        selectedKeys={selectedKeys}
+                                        onSelectionChange={() =>
+                                            setSelectedKeys
+                                        }
+                                    >
+                                        <DropdownItem key="text">
+                                            Text
+                                        </DropdownItem>
+                                        <DropdownItem key="number">
+                                            Number
+                                        </DropdownItem>
+                                        <DropdownItem key="date">
+                                            Date
+                                        </DropdownItem>
+                                        <DropdownItem key="single_date">
+                                            Single Date
+                                        </DropdownItem>
+                                        <DropdownItem key="iteration">
+                                            Iteration
+                                        </DropdownItem>
+                                    </DropdownMenu>
+                                </Dropdown>
+                                <Dropdown>
+                                    <DropdownTrigger>
+                                        <Button
+                                            variant="bordered"
+                                            className="capitalize"
+                                        >
+                                            {selectedValue}
+                                        </Button>
+                                    </DropdownTrigger>
+                                    <DropdownMenu
+                                        aria-label="Single selection example"
+                                        variant="flat"
+                                        disallowEmptySelection
+                                        selectionMode="single"
+                                        selectedKeys={selectedKeys}
+                                        onSelectionChange={() =>
+                                            setSelectedKeys
+                                        }
+                                    >
+                                        <DropdownItem key="text">
+                                            Text
+                                        </DropdownItem>
+                                        <DropdownItem key="number">
+                                            Number
+                                        </DropdownItem>
+                                        <DropdownItem key="date">
+                                            Date
+                                        </DropdownItem>
+                                        <DropdownItem key="single_date">
+                                            Single Date
+                                        </DropdownItem>
+                                        <DropdownItem key="iteration">
+                                            Iteration
+                                        </DropdownItem>
+                                    </DropdownMenu>
+                                </Dropdown>
+                                <Dropdown>
+                                    <DropdownTrigger>
+                                        <Button
+                                            variant="bordered"
+                                            className="capitalize"
+                                        >
+                                            {selectedValue}
+                                        </Button>
+                                    </DropdownTrigger>
+                                    <DropdownMenu
+                                        aria-label="Single selection example"
+                                        variant="flat"
+                                        disallowEmptySelection
+                                        selectionMode="single"
+                                        selectedKeys={selectedKeys}
+                                        onSelectionChange={() =>
+                                            setSelectedKeys
+                                        }
+                                    >
+                                        <DropdownItem key="text">
+                                            Text
+                                        </DropdownItem>
+                                        <DropdownItem key="number">
+                                            Number
+                                        </DropdownItem>
+                                        <DropdownItem key="date">
+                                            Date
+                                        </DropdownItem>
+                                        <DropdownItem key="single_date">
+                                            Single Date
+                                        </DropdownItem>
+                                        <DropdownItem key="iteration">
+                                            Iteration
+                                        </DropdownItem>
+                                    </DropdownMenu>
+                                </Dropdown>
                                 <Button color="primary" type="submit">
                                     <p className="text-white">Sign In</p>
                                 </Button>
