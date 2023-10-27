@@ -1,16 +1,16 @@
 import axios from "axios";
 import { getItem } from "@/config/utils/localStorageControl";
 
-const authHeader = () => ({
-    Authorization: `Bearer ${getItem("authToken")}`,
-});
+// const authHeader = () => ({
+//     Authorization: `Bearer ${getItem("authToken")}`,
+// });
 
 const client = axios.create({
-    baseURL: "https://pagetalk.onrender.com/",
-    headers: {
-        Authorization: `Bearer ${getItem("access_token")}`,
-        // 'Content-Type': 'application/json',
-    },
+    baseURL: "http://127.0.0.1:3001/api/",
+    // headers: {
+    //     Authorization: `Bearer ${getItem("access_token")}`,
+    //     // 'Content-Type': 'application/json',
+    // },
 });
 
 class ApiService {
@@ -18,7 +18,7 @@ class ApiService {
         return client({
             method: "GET",
             url: path,
-            headers: { ...authHeader() },
+            // headers: { ...authHeader() },
             params,
         });
     }
@@ -28,7 +28,7 @@ class ApiService {
             method: "POST",
             url: path,
             data,
-            headers: { ...authHeader(), ...optionalHeader },
+            // headers: { ...authHeader(), ...optionalHeader },
         });
     }
 
@@ -37,7 +37,7 @@ class ApiService {
             method: "PATCH",
             url: path,
             data: JSON.stringify(data),
-            headers: { ...authHeader() },
+            // headers: { ...authHeader() },
         });
     }
 
@@ -46,7 +46,7 @@ class ApiService {
             method: "DELETE",
             url: path,
             data: JSON.stringify(data),
-            headers: { ...authHeader() },
+            // headers: { ...authHeader() },
         });
     }
 
@@ -55,7 +55,7 @@ class ApiService {
             method: "PUT",
             url: path,
             data: JSON.stringify(data),
-            headers: { ...authHeader() },
+            // headers: { ...authHeader() },
         });
     }
 }
