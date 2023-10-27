@@ -1,0 +1,45 @@
+{
+    "status": true,
+    "response": [
+      {
+        "region": "Telangana",
+        "regioncount": "520"
+      },
+      {
+        "region": "Tamil Nadu",
+        "regioncount": "491"
+      },
+      {
+        "region": "Rajasthan",
+        "regioncount": "620"
+      },
+      {
+        "region": "Karnataka",
+        "regioncount": "702"
+      },
+      {
+        "region": "Kerala",
+        "regioncount": "509"
+      },
+      {
+        "region": "Delhi",
+        "regioncount": "601"
+      },
+      {
+        "region": "Maharashtra",
+        "regioncount": "1"
+      },
+      {
+        "region": "Uttar Pradesh",
+        "regioncount": "552"
+      },
+      {
+        "region": "West Bengal",
+        "regioncount": "563"
+      },
+      {
+        "region": "Gujarat",
+        "regioncount": "442"
+      }
+    ]
+  }
