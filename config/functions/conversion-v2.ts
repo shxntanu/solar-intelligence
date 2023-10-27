@@ -42,13 +42,6 @@ export function convertResponseToFormattedData(
     ) {
         const keys = extractFirstKeyValues(response);
 
-        console.log(response.response);
-        // const datasets = response.response.map((item, index) => ({
-        //     label: `Dataset ${index + 1}`,
-        //     data: extractSecondKeyValues(response.response),
-        //     backgroundColor: "rgba(255, 99, 132, 0.5)", // You can set the desired color here
-        // }));
-
         const datasets = [
             {
                 label: "Dataset 1",
@@ -56,11 +49,6 @@ export function convertResponseToFormattedData(
                 backgroundColor: "rgba(255, 99, 132, 0.5)",
             },
         ];
-
-        console.log({
-            labels: keys,
-            datasets,
-        });
         return {
             labels: keys,
             datasets,
