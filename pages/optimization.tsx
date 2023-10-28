@@ -100,7 +100,7 @@ export default function App() {
           <CardHeader className="flex gap-3">
             <div className="flex flex-col">
               <p className="text-lg">
-                Annual Savings: <b>{card.annualsavings}</b>
+                Annual Savings: <b>Rs. {card.annualsavings}</b>
               </p>
               <p className="text-lg">
                 User Id: <b>{card.id}</b>
@@ -113,10 +113,10 @@ export default function App() {
               Panel Type: <b>{card.paneltype}</b>
             </p>
             <p>
-              Capacity: <b>{card.capacity}</b>
+              Capacity: <b>{card.capacity} kWh</b>
             </p>
             <p>
-              Energy Produced: <b>{card.energyproduced}</b>
+              Energy Produced: <b>{card.energyproduced} kWh</b>
             </p>
             <p>
               Type of installation: <b>{card.typeofinstallation}</b>
@@ -135,7 +135,7 @@ export default function App() {
             <CardHeader className="flex gap-3">
               <div className="flex flex-col">
                 <p className="text-lg">
-                  Annual Savings: <b>{card.annualsavings}</b>
+                  Annual Savings: <b>Rs. {card.annualsavings}</b>
                 </p>
                 <p className="text-lg">
                   User Id: <b>{card.id}</b>
@@ -148,10 +148,10 @@ export default function App() {
                 Panel Type: <b>{card.paneltype}</b>
               </p>
               <p>
-                Capacity: <b>{card.capacity}</b>
+                Capacity: <b>{card.capacity} kWh</b>
               </p>
               <p>
-                Energy Produced: <b>{card.energyproduced}</b>
+                Energy Produced: <b>{card.energyproduced} kWh</b>
               </p>
               <p>
                 Type of installation: <b>{card.typeofinstallation}</b>
