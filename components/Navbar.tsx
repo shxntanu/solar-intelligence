@@ -12,7 +12,9 @@ export default function Nav() {
         <Navbar isBordered>
             <NavbarContent justify="start">
                 <NavbarBrand className="">
-                    <b>Hacktastic4</b>
+                    <Link href="/">
+                        <b>Hacktastic4</b>
+                    </Link>
                 </NavbarBrand>
                 <NavbarContent className="hidden sm:flex gap-3" justify="end">
                     <NavbarItem>

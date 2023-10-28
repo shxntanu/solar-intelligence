@@ -12,7 +12,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <ConfigProvider theme={theme}>
             <NextUIProvider>
                 <Nav />
-                <HomeSection />
                 <Component {...pageProps} />
                 <Footer />
             </NextUIProvider>
