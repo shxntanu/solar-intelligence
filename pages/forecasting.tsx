@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { SetStateAction } from "react";
 import {
     Card,
     CardHeader,
@@ -12,8 +11,8 @@ import {
     DropdownTrigger,
     DropdownMenu,
     DropdownItem,
+    Divider,
 } from "@nextui-org/react";
-import Link from "next/link";
 
 import {
     Chart as ChartJS,
@@ -24,27 +23,8 @@ import {
     Tooltip,
     Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
-import CardHolder from "@/components/CardHolder";
-import { convertJSONResponse } from "@/config/functions/conversion";
-import { convertResponseToFormattedData } from "@/config/functions/conversion-v2";
 import { ApiService } from "@/config/api/ApiService";
-
-import * as globalRes from "@/constants/global.json";
-import * as regionRes from "@/constants/regions.json";
-import * as numericRes from "@/constants/numeric.json";
-
-interface FormData {
-    region?: string;
-    category: string;
-    numeric: string;
-}
-
-const initialState: FormData = {
-    region: undefined,
-    category: "",
-    numeric: "",
-};
+import { CopyBlock, a11yLight } from "react-code-blocks";
 
 ChartJS.register(
     CategoryScale,
@@ -123,7 +103,58 @@ const regions = [
     "Gujarat",
 ];
 
-function RenderingInIFrame() {
+const resultSnippet = {
+    data: {
+        leftComparison: {
+            name: "Luke Skywalker",
+            friendsConnection: {
+                totalCount: 4,
+                edges: [
+                    {
+                        node: {
+                            name: "Han Solo",
+                        },
+                    },
+                    {
+                        node: {
+                            name: "Leia Organa",
+                        },
+                    },
+                    {
+                        node: {
+                            name: "C-3PO",
+                        },
+                    },
+                ],
+            },
+        },
+        rightComparison: {
+            name: "R2-D2",
+            friendsConnection: {
+                totalCount: 3,
+                edges: [
+                    {
+                        node: {
+                            name: "Luke Skywalker",
+                        },
+                    },
+                    {
+                        node: {
+                            name: "Han Solo",
+                        },
+                    },
+                    {
+                        node: {
+                            name: "Leia Organa",
+                        },
+                    },
+                ],
+            },
+        },
+    },
+};
+
+function Forecasting() {
     const [installationType, setInstallationType] =
         useState<string>("commercial");
     const [panelType, setPanelType] = useState<string>("monocrystalline");
@@ -137,8 +168,10 @@ function RenderingInIFrame() {
     const [installerName, setInstallerName] = useState<string>("GreenEnergy");
     const [warrantyYears, setWarrantyYears] = useState<string>("");
 
-    const [formState, setFormState] = useState<FormData>(initialState);
-    const [showSecondDropdown, setShowSecondDropdown] = useState(false);
+    const [annualSavingOP, setAnnualSavingOP] = useState<string>("");
+    const [fetchOP, setFetchOP] = useState();
+    const showLineNumbers = true;
+    const codeBlock = true;
 
     const handleSubmit = async () => {
         console.log({
@@ -156,13 +189,16 @@ function RenderingInIFrame() {
 
         ApiService.get(
             `ml/forecast?attributes=[${itMapping[installationType]}, ${ptMapping[panelType]}, ${capacity}, ${maintenanceFreq}, ${cost}, ${regionMapping[region]}, ${toiMapping[typeofinstallation]}, ${inMapping[installerName]}, ${warrantyYears}]`
-        );
+        ).then((res) => {
+            setAnnualSavingOP(res.data.response.response);
+            setFetchOP(res.data);
+        });
     };
 
     return (
         <div>
-            <div className="flex-grow flex items-center justify-center py-10">
-                <Card className="w-[800px]">
+            <div className="flex-grow flex flex-col items-center justify-center py-10 gap-10">
+                <Card className="w-[800px] items-center justify-center pb-10">
                     <CardHeader className="flex flex-col gap-3 pt-10">
                         <div className="flex flex-col text-center">
                             <p className="text-md">Data Input</p>
@@ -178,6 +214,7 @@ function RenderingInIFrame() {
                                     <DropdownTrigger>
                                         <Button
                                             variant="ghost"
+                                            color="primary"
                                             className="capitalize min-w-[200px]"
                                         >
                                             {installationType}
@@ -210,6 +247,7 @@ function RenderingInIFrame() {
                                 <Dropdown>
                                     <DropdownTrigger>
                                         <Button
+                                            color="primary"
                                             variant="bordered"
                                             className="capitalize min-w-[200px]"
                                         >
@@ -244,6 +282,7 @@ function RenderingInIFrame() {
                                 <Dropdown>
                                     <DropdownTrigger>
                                         <Button
+                                            color="primary"
                                             variant="bordered"
                                             className="capitalize min-w-[200px]"
                                         >
@@ -271,6 +310,7 @@ function RenderingInIFrame() {
                                 <Dropdown>
                                     <DropdownTrigger>
                                         <Button
+                                            color="primary"
                                             variant="bordered"
                                             className="capitalize min-w-[200px]"
                                         >
@@ -301,6 +341,7 @@ function RenderingInIFrame() {
                                 <Dropdown>
                                     <DropdownTrigger>
                                         <Button
+                                            color="primary"
                                             variant="bordered"
                                             className="capitalize min-w-[200px]"
                                         >
@@ -334,7 +375,7 @@ function RenderingInIFrame() {
                                     </DropdownMenu>
                                 </Dropdown>
                             </div>
-
+                            <Divider orientation="vertical" />
                             <div className="flex flex-col gap-3">
                                 <Input
                                     type="text"
@@ -386,6 +427,12 @@ function RenderingInIFrame() {
                             </div>
                         </CardBody>
                     </div>
+                    {annualSavingOP && (
+                        <h1 className="py-5">
+                            Your annual savings are estimated to be:{" "}
+                            <b>{annualSavingOP}</b>
+                        </h1>
+                    )}
                     <Button
                         color="primary"
                         type="submit"
@@ -394,15 +441,36 @@ function RenderingInIFrame() {
                         <p className="text-white">Submit</p>
                     </Button>
                 </Card>
+                {fetchOP && (
+                    <div
+                        style={{
+                            width: "800px",
+                            flex: 1,
+                            background: "#19C964",
+                            color: "white",
+                            paddingBottom: "1em",
+                        }}
+                    >
+                        <h5 style={{ textAlign: "center" }}>Result</h5>
+                        <CopyBlock
+                            text={JSON.stringify(fetchOP, null, 2)}
+                            {...{ showLineNumbers, codeBlock }}
+                            theme={a11yLight}
+                            customStyle={{
+                                height: "250px",
+                                outerWidth: "60%",
+                                overflowY: "scroll",
+                                borderRadius: "5px",
+                                boxShadow: "1px 2px 3px rgba(0,0,0,0.35)",
+                                fontSize: "0.75rem",
+                                margin: "0px 0.75rem",
+                            }}
+                        />
+                    </div>
+                )}
             </div>
         </div>
     );
 }
 
-export default RenderingInIFrame;
-
-/*
-
-
-
-*/
+export default Forecasting;
