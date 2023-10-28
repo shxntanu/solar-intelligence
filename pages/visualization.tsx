@@ -140,6 +140,7 @@ function RenderingInIFrame() {
       } else if (category && category !== "None") {
         ApiService.get(`region/${state}/${category}`).then((res) => {
           setData(convertResponseToFormattedData(res.data));
+          setShowApi(`api/region/${state}/${category}`);
         });
       } else {
         ApiService.get(`region`).then((res) => {
