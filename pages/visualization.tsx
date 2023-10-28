@@ -79,7 +79,6 @@ const states = [
     "Uttar Pradesh",
     "West Bengal",
     "Gujarat",
-    "None",
 ];
 
 function RenderingInIFrame() {
@@ -143,16 +142,6 @@ function RenderingInIFrame() {
                     setData(convertResponseToFormattedData(res.data));
                 });
             }
-        }
-    };
-
-    const decide = (reg: string, isG: boolean) => {
-        if (reg === "global" && isG === true) {
-            return true;
-        } else if (reg === "global" && isG === false) {
-            return false;
-        } else if (reg === "regional" && isG === false) {
-            return false;
         }
     };
 
