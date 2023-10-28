@@ -82,7 +82,7 @@ const states = [
   "None",
 ];
 
-function RenderingInIFrame() {
+function Visualization() {
   const [data, setData] = useState<any>(
     convertResponseToFormattedData(globalRes)
   );
@@ -308,4 +308,4 @@ function RenderingInIFrame() {
   );
 }
 
-export default RenderingInIFrame;
+export default Visualization;
