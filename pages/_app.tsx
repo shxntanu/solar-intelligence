@@ -5,12 +5,14 @@ import { NextUIProvider } from "@nextui-org/react";
 import theme from "@/config/theme/themeConfig";
 import Nav from "../components/Navbar"
 import Footer from "@/components/Footer";
+import HomeSection from "@/components/Title";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <ConfigProvider theme={theme}>
             <NextUIProvider>
                 <Nav />
+                <HomeSection />
                 <Component {...pageProps} />
                 <Footer />
             </NextUIProvider>
