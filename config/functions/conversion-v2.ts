@@ -1,5 +1,6 @@
 type OriginalResponse = {
     status: boolean;
+    label: string;
     response: Array<{ [key: string]: string }>;
 };
 
@@ -44,7 +45,7 @@ export function convertResponseToFormattedData(
 
         const datasets = [
             {
-                label: "Dataset",
+                label: response.label,
                 data: extractSecondKeyValues(response.response),
                 backgroundColor: "rgb(22,200,100, 0.7)",
             },
