@@ -126,7 +126,7 @@ export default function App() {
       ))}
       {ONSubmit && (
         <h1 className="text-2xl text-center">
-          AI tailaored Recommendations for User Id: <b>{userInput}</b>
+          AI tailored Recommendations for User ID: <b>{userInput}</b>
         </h1>
       )}
       <div className="mx-2 my-2 grid grid-cols-3 space-x-5">
