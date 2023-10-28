@@ -44,9 +44,9 @@ export function convertResponseToFormattedData(
 
         const datasets = [
             {
-                label: "Dataset 1",
+                label: "Dataset",
                 data: extractSecondKeyValues(response.response),
-                backgroundColor: "rgba(255, 99, 132, 0.5)",
+                backgroundColor: "rgb(22,200,100, 0.7)",
             },
         ];
         return {

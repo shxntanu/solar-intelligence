@@ -12,10 +12,8 @@ const config: Config = {
   theme: {
     colors: {
       ...colors,
-      darkblue: "#4E4FEB",
-      primary: "#068FFF",
-      lightgray: "#EEEEEE",
-      gray_bg: "#F6F9FC",
+      primary: "#19C964",
+      secondary: "#EAFAF1",
     },
     extend: {
       fontFamily: {
@@ -37,8 +35,8 @@ const config: Config = {
       themes: {
         light: {
           colors: {
-            primary: "#A6FF96",
-            // primary: "#4E4FEB",
+            primary: "#19C964",
+            secondary: "#EAFAF1",
           },
         },
         dark: {
