@@ -35,16 +35,12 @@ import * as regionRes from "@/constants/regions.json";
 import * as numericRes from "@/constants/numeric.json";
 
 interface FormData {
-    isGlobal: boolean;
-    selected: "global" | "regional";
     region?: string;
     category: string;
     numeric: string;
 }
 
 const initialState: FormData = {
-    isGlobal: true,
-    selected: "global", // "global" | "regional
     region: undefined,
     category: "",
     numeric: "",
@@ -95,6 +91,7 @@ function RenderingInIFrame() {
     const [category, setCategory] = useState<undefined | string>("None");
     const [numericData, setNumericData] = useState<undefined | string>("None");
     const [formState, setFormState] = useState<FormData>(initialState);
+    const [showSecondDropdown, setShowSecondDropdown] = useState(false);
 
     const handleSubmit = async () => {
         console.log({
@@ -177,8 +174,9 @@ function RenderingInIFrame() {
                             <Dropdown>
                                 <DropdownTrigger>
                                     <Button
-                                        variant="bordered"
-                                        className="capitalize"
+                                        variant="ghost"
+                                        color="primary"
+                                        className="capitalize min-w-[200px]"
                                     >
                                         {region}
                                     </Button>
@@ -190,20 +188,10 @@ function RenderingInIFrame() {
                                     selectionMode="single"
                                     selectedKeys={region}
                                     onAction={(value) => {
-                                        setFormState((prevState) => {
-                                            console.log(prevState);
-                                            console.log(value);
-                                            return {
-                                                ...prevState,
-                                                isGlobal:
-                                                    value.toLocaleString() !=
-                                                        prevState.selected &&
-                                                    !prevState.isGlobal,
-                                                selected:
-                                                    value.toLocaleString(),
-                                            };
-                                        });
                                         setRegion(value.toLocaleString());
+                                        setShowSecondDropdown(
+                                            value === "regional"
+                                        );
                                     }}
                                 >
                                     <DropdownItem key="regional">
@@ -214,12 +202,12 @@ function RenderingInIFrame() {
                                     </DropdownItem>
                                 </DropdownMenu>
                             </Dropdown>
-                            {!formState.isGlobal && (
+                            {showSecondDropdown && (
                                 <Dropdown>
                                     <DropdownTrigger>
                                         <Button
                                             variant="bordered"
-                                            className="capitalize"
+                                            className="capitalize min-w-[200px]"
                                         >
                                             {state}
                                         </Button>
@@ -257,7 +245,7 @@ function RenderingInIFrame() {
                                 <DropdownTrigger>
                                     <Button
                                         variant="bordered"
-                                        className="capitalize"
+                                        className="capitalize min-w-[200px]"
                                     >
                                         {category}
                                     </Button>
@@ -291,7 +279,7 @@ function RenderingInIFrame() {
                                 <DropdownTrigger>
                                     <Button
                                         variant="bordered"
-                                        className="capitalize"
+                                        className="capitalize min-w-[200px]"
                                     >
                                         {numericData}
                                     </Button>
