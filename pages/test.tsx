@@ -86,9 +86,9 @@ const states = [
 function RenderingInIFrame() {
   const [data, setData] = useState(convertResponseToFormattedData(globalRes));
   const [region, setRegion] = useState("global");
-  const [state, setState] = useState(undefined);
-  const [category, setCategory] = useState(undefined);
-  const [numericData, setNumericData] = useState(undefined);
+  const [state, setState] = useState<undefined | string>(undefined);
+  const [category, setCategory] = useState<undefined | string>(undefined);
+  const [numericData, setNumericData] = useState<undefined | string>(undefined);
   const [formState, setFormState] = useState<FormData>(initialState);
 
   const handleSubmit = async () => {
