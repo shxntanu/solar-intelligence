@@ -30,6 +30,7 @@ interface CardData {
 export default function App() {
   const [userInput, setUserInput] = useState<string>("");
   const [cardData, setCardData] = useState<CardData[]>([]);
+  const [ONSubmit, setONSubmit] = useState<boolean>(false);
 
   const [singleUserData, setSingleUserData] = useState<CardData[]>([]);
 
@@ -74,6 +75,7 @@ export default function App() {
   const onSubmit = () => {
     fetchUser();
     fetchSingleUser();
+    setONSubmit(true);
   };
 
   return (
@@ -122,6 +124,11 @@ export default function App() {
           </CardBody>
         </Card>
       ))}
+      {ONSubmit && (
+        <h1 className="text-2xl text-center">
+          AI tailaored Recommendations for User Id: <b>{userInput}</b>
+        </h1>
+      )}
       <div className="mx-2 my-2 grid grid-cols-3 space-x-5">
         {cardData.map((card, index) => (
           <Card className="m-5 bg-green-100" key={index}>
@@ -131,8 +138,8 @@ export default function App() {
                   Annual Savings: <b>{card.annualsavings}</b>
                 </p>
                 <p className="text-lg">
-                User Id: <b>{card.id}</b>
-              </p>
+                  User Id: <b>{card.id}</b>
+                </p>
               </div>
             </CardHeader>
             <Divider />
