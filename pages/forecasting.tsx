@@ -15,92 +15,92 @@ import {
 } from "@nextui-org/react";
 
 import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
 } from "chart.js";
 import { ApiService } from "@/config/api/ApiService";
 import { CopyBlock, a11yLight } from "react-code-blocks";
 
 ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
 );
 
 export const options = {
-    responsive: true,
-    plugins: {
-        legend: {
-            position: "top" as const,
-        },
-        title: {
-            display: true,
-            text: "Data Visualisation",
-        },
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top" as const,
     },
+    title: {
+      display: true,
+      text: "Data Visualisation",
+    },
+  },
 };
 
 // Installation Type Mapping (done)
 const itMapping = {
-    Commerical: "0",
-    Industrial: "1",
-    Residential: "2",
+  Commercial: "0",
+  Industrial: "1",
+  Residential: "2",
 };
 
 // Panel Type Mapping (done)
 const ptMapping = {
-    Monocrystalline: "0",
-    Polycrystalline: "1",
-    ThinFilm: "2",
+  Monocrystalline: "0",
+  Polycrystalline: "1",
+  ThinFilm: "2",
 };
 
 // Type of Installation Mapping (done)
 const toiMapping = {
-    GroundMounted: "0",
-    RoofMounted: "1",
+  GroundMounted: "0",
+  RoofMounted: "1",
 };
 
 // Installer Name Mapping (done)
 const inMapping = {
-    GreenEnergy: "0",
-    RaysPower: "1",
-    SolarTech: "2",
-    SunWave: "3",
+  GreenEnergy: "0",
+  RaysPower: "1",
+  SolarTech: "2",
+  SunWave: "3",
 };
 
 // Region Mapping (done)
 const regionMapping = {
-    Delhi: "0",
-    Gujarat: "1",
-    Karnataka: "2",
-    Kerala: "3",
-    Maharashtra: "4",
-    Rajasthan: "5",
-    TamilNadu: "6",
-    Telangana: "7",
-    UttarPradesh: "8",
-    WestBengal: "9",
+  Delhi: "0",
+  Gujarat: "1",
+  Karnataka: "2",
+  Kerala: "3",
+  Maharashtra: "4",
+  Rajasthan: "5",
+  TamilNadu: "6",
+  Telangana: "7",
+  UttarPradesh: "8",
+  WestBengal: "9",
 };
 
 const regions = [
-    "Telangana",
-    "Tamil Nadu",
-    "Rajasthan",
-    "Karnataka",
-    "Kerala",
-    "Delhi",
-    "Maharashtra",
-    "Uttar Pradesh",
-    "West Bengal",
-    "Gujarat",
+  "Telangana",
+  "Tamil Nadu",
+  "Rajasthan",
+  "Karnataka",
+  "Kerala",
+  "Delhi",
+  "Maharashtra",
+  "Uttar Pradesh",
+  "West Bengal",
+  "Gujarat",
 ];
 
 const resultSnippet = {
@@ -173,20 +173,19 @@ function Forecasting() {
     const showLineNumbers = true;
     const codeBlock = true;
 
-    const handleSubmit = async () => {
-        console.log({
-            installationType,
-            panelType,
-            capacity,
-            // energyProduced,
-            maintenanceFreq,
-            cost,
-            region,
-            typeofinstallation,
-            installerName,
-            warrantyYears,
-        });
-
+  const handleSubmit = async () => {
+    console.log({
+      installationType,
+      panelType,
+      capacity,
+      // energyProduced,
+      maintenanceFreq,
+      cost,
+      region,
+      typeofinstallation,
+      installerName,
+      warrantyYears,
+    });
         ApiService.get(
             `ml/forecast?attributes=[${itMapping[installationType]}, ${ptMapping[panelType]}, ${capacity}, ${maintenanceFreq}, ${cost}, ${regionMapping[region]}, ${toiMapping[typeofinstallation]}, ${inMapping[installerName]}, ${warrantyYears}]`
         ).then((res) => {
@@ -397,23 +396,21 @@ function Forecasting() {
                                     }
                                 /> */}
 
-                                <Input
-                                    type="text"
-                                    label="Maintenance Frequency"
-                                    className="w-[300px]"
-                                    value={maintenanceFreq}
-                                    onChange={(e) =>
-                                        setMaintenanceFreq(e.target.value)
-                                    }
-                                />
+                <Input
+                  type="text"
+                  label="Maintenance Frequency"
+                  className="w-[300px]"
+                  value={maintenanceFreq}
+                  onChange={(e) => setMaintenanceFreq(e.target.value)}
+                />
 
-                                <Input
-                                    type="text"
-                                    label="Cost"
-                                    className="w-[300px]"
-                                    value={cost}
-                                    onChange={(e) => setCost(e.target.value)}
-                                />
+                <Input
+                  type="text"
+                  label="Cost"
+                  className="w-[300px]"
+                  value={cost}
+                  onChange={(e) => setCost(e.target.value)}
+                />
 
                                 <Input
                                     type="text"
