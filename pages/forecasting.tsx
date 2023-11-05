@@ -122,8 +122,6 @@ function Forecasting() {
     const showLineNumbers = true;
     const codeBlock = true;
 
-    let codeBlockText = JSON.stringify(fetchOP, null, 2);
-
     const handleSubmit = async () => {
         console.log({
             installationType,
@@ -136,29 +134,21 @@ function Forecasting() {
             installerName,
             warrantyYears,
         });
-        // axios
-        //     .get(
-        //         `https://mindspark-23-ml.onrender.com/ml/forecast?attributes=[${itMapping[installationType]},${ptMapping[panelType]},${capacity},${maintenanceFreq},${cost},5,${toiMapping[typeofinstallation]},${inMapping[installerName]},${warrantyYears}]`,
-        //         {
-        //             headers: {
-        //                 "Access-Control-Allow-Origin":
-        //                     "https://mindspark-23-ml.onrender.com",
-        //                 "Access-Control-Allow-Methods":
-        //                     "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-        //             },
-        //         }
-        //     )
-        axios.get('https://mindspark-23-ml.onrender.com/ml',
-        {
-            headers: {
-                "Access-Control-Allow-Origin":
-                    "https://mindspark-23-ml.onrender.com",
-                "Access-Control-Allow-Methods":
-                    "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-            },
-        })
+        axios
+            .post(`/api/forecast`, {
+                installationType: itMapping[installationType],
+                panelType: ptMapping[panelType],
+                capacity,
+                maintenanceFreq,
+                cost,
+                region,
+                typeofinstallation: toiMapping[typeofinstallation],
+                installerName: inMapping[installerName],
+                warrantyYears,
+            })
             .then((res) => {
-                setAnnualSavingOP(res.data.response.response);
+                console.log(res.data);
+                setAnnualSavingOP(res.data.response);
                 setFetchOP(res.data);
             });
     };
@@ -422,18 +412,32 @@ function Forecasting() {
                         <h5 style={{ textAlign: "center" }}>Result</h5>
                         <CopyBlock
                             // text={JSON.stringify(fetchOP, null, 2)}
-                            {...{ showLineNumbers, codeBlock }}
-                            // theme={a11yLight}
-                            theme={{
-                                height: "250px",
-                                outerWidth: "60%",
-                                overflowY: "scroll",
-                                borderRadius: "5px",
-                                boxShadow: "1px 2px 3px rgba(0,0,0,0.35)",
-                                fontSize: "0.75rem",
-                                margin: "0px 0.75rem",
-                                text: codeBlockText,
+                            {...{
+                                showLineNumbers,
+                                codeBlock,
+                                language: "json",
+                                text: JSON.stringify(fetchOP, null, 2),
+                                theme: {
+                                    height: "250px",
+                                    outerWidth: "60%",
+                                    overflowY: "scroll",
+                                    borderRadius: "5px",
+                                    boxShadow: "1px 2px 3px rgba(0,0,0,0.35)",
+                                    fontSize: "0.75rem",
+                                    margin: "0px 0.75rem",
+                                },
                             }}
+
+                            // theme={{
+                            //     height: "250px",
+                            //     outerWidth: "60%",
+                            //     overflowY: "scroll",
+                            //     borderRadius: "5px",
+                            //     boxShadow: "1px 2px 3px rgba(0,0,0,0.35)",
+                            //     fontSize: "0.75rem",
+                            //     margin: "0px 0.75rem",
+                            //     // text: JSON.stringify(fetchOP, null, 2),
+                            // }}
                         />
                     </div>
                 )}
