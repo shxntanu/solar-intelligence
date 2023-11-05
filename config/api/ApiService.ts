@@ -6,58 +6,58 @@ import { getItem } from "@/config/utils/localStorageControl";
 // });
 
 const client = axios.create({
-    baseURL: "http://127.0.0.1:3001/api/",
-    // headers: {
-    //     Authorization: `Bearer ${getItem("access_token")}`,
-    //     // 'Content-Type': 'application/json',
-    // },
+  baseURL: "https://mindspark-express-backend.onrender.com/api/",
+  // headers: {
+  //     Authorization: `Bearer ${getItem("access_token")}`,
+  //     // 'Content-Type': 'application/json',
+  // },
 });
 
 class ApiService {
-    static get(path = "", params = {}) {
-        return client({
-            method: "GET",
-            url: path,
-            // headers: { ...authHeader() },
-            params,
-        });
-    }
+  static get(path = "", params = {}) {
+    return client({
+      method: "GET",
+      url: path,
+      // headers: { ...authHeader() },
+      params,
+    });
+  }
 
-    static post(path = "", data = {}, optionalHeader = {}) {
-        return client({
-            method: "POST",
-            url: path,
-            data,
-            // headers: { ...authHeader(), ...optionalHeader },
-        });
-    }
+  static post(path = "", data = {}, optionalHeader = {}) {
+    return client({
+      method: "POST",
+      url: path,
+      data,
+      // headers: { ...authHeader(), ...optionalHeader },
+    });
+  }
 
-    static patch(path = "", data = {}) {
-        return client({
-            method: "PATCH",
-            url: path,
-            data: JSON.stringify(data),
-            // headers: { ...authHeader() },
-        });
-    }
+  static patch(path = "", data = {}) {
+    return client({
+      method: "PATCH",
+      url: path,
+      data: JSON.stringify(data),
+      // headers: { ...authHeader() },
+    });
+  }
 
-    static delete(path = "", data = {}) {
-        return client({
-            method: "DELETE",
-            url: path,
-            data: JSON.stringify(data),
-            // headers: { ...authHeader() },
-        });
-    }
+  static delete(path = "", data = {}) {
+    return client({
+      method: "DELETE",
+      url: path,
+      data: JSON.stringify(data),
+      // headers: { ...authHeader() },
+    });
+  }
 
-    static put(path = "", data = {}) {
-        return client({
-            method: "PUT",
-            url: path,
-            data: JSON.stringify(data),
-            // headers: { ...authHeader() },
-        });
-    }
+  static put(path = "", data = {}) {
+    return client({
+      method: "PUT",
+      url: path,
+      data: JSON.stringify(data),
+      // headers: { ...authHeader() },
+    });
+  }
 }
 
 export { ApiService };

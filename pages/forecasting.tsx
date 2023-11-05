@@ -186,7 +186,7 @@ function Forecasting() {
       warrantyYears,
     });
     ApiService.get(
-      `ml/forecast?attributes=[${itMapping[installationType]}, ${ptMapping[panelType]}, ${capacity}, ${maintenanceFreq}, ${cost}, ${regionMapping[region]}, ${toiMapping[typeofinstallation]}, ${inMapping[installerName]}, ${warrantyYears}]`
+      `ml/forecast?attributes=[${itMapping[installationType]}, ${ptMapping[panelType]}, ${capacity}, ${maintenanceFreq}, ${cost}, 5, ${toiMapping[typeofinstallation]}, ${inMapping[installerName]}, ${warrantyYears}]`
     ).then((res) => {
       setAnnualSavingOP(res.data.response.response);
       setFetchOP(res.data);
