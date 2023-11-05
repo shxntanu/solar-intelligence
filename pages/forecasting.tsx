@@ -23,7 +23,7 @@ import {
     Tooltip,
     Legend,
 } from "chart.js";
-import { ApiService } from "@/config/api/ApiService";
+import axios from "axios";
 import { CopyBlock, a11yLight } from "react-code-blocks";
 
 ChartJS.register(
@@ -136,12 +136,31 @@ function Forecasting() {
             installerName,
             warrantyYears,
         });
-        ApiService.get(
-            `ml/forecast?attributes=[${itMapping[installationType]}, ${ptMapping[panelType]}, ${capacity}, ${maintenanceFreq}, ${cost}, 5, ${toiMapping[typeofinstallation]}, ${inMapping[installerName]}, ${warrantyYears}]`
-        ).then((res) => {
-            setAnnualSavingOP(res.data.response.response);
-            setFetchOP(res.data);
-        });
+        // axios
+        //     .get(
+        //         `https://mindspark-23-ml.onrender.com/ml/forecast?attributes=[${itMapping[installationType]},${ptMapping[panelType]},${capacity},${maintenanceFreq},${cost},5,${toiMapping[typeofinstallation]},${inMapping[installerName]},${warrantyYears}]`,
+        //         {
+        //             headers: {
+        //                 "Access-Control-Allow-Origin":
+        //                     "https://mindspark-23-ml.onrender.com",
+        //                 "Access-Control-Allow-Methods":
+        //                     "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        //             },
+        //         }
+        //     )
+        axios.get('https://mindspark-23-ml.onrender.com/ml',
+        {
+            headers: {
+                "Access-Control-Allow-Origin":
+                    "https://mindspark-23-ml.onrender.com",
+                "Access-Control-Allow-Methods":
+                    "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+            },
+        })
+            .then((res) => {
+                setAnnualSavingOP(res.data.response.response);
+                setFetchOP(res.data);
+            });
     };
 
     return (
