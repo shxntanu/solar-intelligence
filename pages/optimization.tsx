@@ -36,7 +36,7 @@ export default function App() {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.post(`/api/proxy`, {
+      const response = await axios.post(`/api/optimize`, {
         user_id: userInput,
       });
 
@@ -44,7 +44,7 @@ export default function App() {
         alert("User not found");
         return;
       }
-
+      console.log(response);
       setCardData(response.data.response);
     } catch (error) {
       console.error("Error fetching data:", error);
