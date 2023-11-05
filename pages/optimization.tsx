@@ -36,17 +36,9 @@ export default function App() {
 
     const fetchUser = async () => {
         try {
-            const response = await axios.get(
-                `https://mindspark-23-ml.onrender.com/ml/optimize/${userInput}`,
-                {
-                    headers: {
-                        "Access-Control-Allow-Origin":
-                            "https://mindspark-23-ml.onrender.com",
-                        "Access-Control-Allow-Methods":
-                            "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-                    },
-                }
-            );
+            const response = await axios.post(`/api/proxy`, {
+                user_id: userInput,
+            });
 
             if (response.data.status === false) {
                 alert("User not found");
