@@ -54,7 +54,7 @@ export default function App() {
   const fetchSingleUser = async () => {
     try {
       const response = await axios.get(
-        `https://mindspark-23-ml.onrender.com/api/ml/singleUser/${userInput}`,
+        `https://mindspark-express-backend.onrender.com/api/ml/singleUser/${userInput}`,
         {
           headers: {
             "Access-Control-Allow-Origin":
