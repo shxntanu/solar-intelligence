@@ -1,0 +1,173 @@
+{
+    "users": [
+      {
+        "customer_number": "345678901234",
+        "bu_number": "1003",
+        "bills": {
+          "2023": {
+            "January": 370,
+            "February": 380,
+            "March": 390,
+            "April": 400,
+            "May": 410,
+            "June": 420,
+            "July": 430,
+            "August": 440,
+            "September": 450,
+            "October": 460,
+            "November": 450,
+            "December": 440
+          }
+        },
+        "sanctioned_amount": 415
+      },
+      {
+        "customer_number": "456789012345",
+        "bu_number": "1004",
+        "bills": {
+          "2023": {
+            "January": 380,
+            "February": 390,
+            "March": 400,
+            "April": 410,
+            "May": 420,
+            "June": 430,
+            "July": 440,
+            "August": 450,
+            "September": 460,
+            "October": 470,
+            "November": 460,
+            "December": 450
+          }
+        },
+        "sanctioned_amount": 435
+      },
+      {
+        "customer_number": "567890123456",
+        "bu_number": "1005",
+        "bills": {
+          "2023": {
+            "January": 800,
+            "February": 820,
+            "March": 850,
+            "April": 870,
+            "May": 890,
+            "June": 920,
+            "July": 950,
+            "August": 980,
+            "September": 1000,
+            "October": 1050,
+            "November": 1100,
+            "December": 1120
+          }
+        },
+        "sanctioned_amount": 950
+      },
+      {
+        "customer_number": "678901234567",
+        "bu_number": "1006",
+        "bills": {
+          "2023": {
+            "January": 1400,
+            "February": 1450,
+            "March": 1500,
+            "April": 1550,
+            "May": 1600,
+            "June": 1650,
+            "July": 1700,
+            "August": 1750,
+            "September": 1800,
+            "October": 1850,
+            "November": 1900,
+            "December": 1950
+          }
+        },
+        "sanctioned_amount": 1700
+      },
+      {
+        "customer_number": "789012345678",
+        "bu_number": "1007",
+        "bills": {
+          "2023": {
+            "January": 2100,
+            "February": 2150,
+            "March": 2200,
+            "April": 2250,
+            "May": 2300,
+            "June": 2350,
+            "July": 2400,
+            "August": 2450,
+            "September": 2500,
+            "October": 2550,
+            "November": 2600,
+            "December": 2650
+          }
+        },
+        "sanctioned_amount": 2350
+      },
+      {
+        "customer_number": "890123456789",
+        "bu_number": "1008",
+        "bills": {
+          "2023": {
+            "January": 2900,
+            "February": 2950,
+            "March": 3000,
+            "April": 3050,
+            "May": 3100,
+            "June": 3150,
+            "July": 3200,
+            "August": 3250,
+            "September": 3300,
+            "October": 3350,
+            "November": 3400,
+            "December": 3450
+          }
+        },
+        "sanctioned_amount": 3150
+      },
+      {
+        "customer_number": "901234567890",
+        "bu_number": "1009",
+        "bills": {
+          "2023": {
+            "January": 4100,
+            "February": 4150,
+            "March": 4200,
+            "April": 4250,
+            "May": 4300,
+            "June": 4350,
+            "July": 4400,
+            "August": 4450,
+            "September": 4500,
+            "October": 4550,
+            "November": 4600,
+            "December": 4650
+          }
+        },
+        "sanctioned_amount": 4350
+      },
+      {
+        "customer_number": "012345678901",
+        "bu_number": "1010",
+        "bills": {
+          "2023": {
+            "January": 5200,
+            "February": 5250,
+            "March": 5300,
+            "April": 5350,
+            "May": 5400,
+            "June": 5450,
+            "July": 5500,
+            "August": 5550,
+            "September": 5600,
+            "October": 5650,
+            "November": 5700,
+            "December": 5750
+          }
+        },
+        "sanctioned_amount": 5450
+      }
+    ]
+  }
+  
