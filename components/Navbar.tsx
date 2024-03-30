@@ -13,7 +13,7 @@ export default function Nav() {
             <NavbarContent justify="start">
                 <NavbarBrand className="">
                     <Link href="/">
-                        <b>Hacktastic4</b>
+                        <b>yarn dev</b>
                     </Link>
                 </NavbarBrand>
                 <NavbarContent className="hidden sm:flex gap-3" justify="end">
@@ -49,6 +49,11 @@ export default function Nav() {
                     <NavbarItem>
                         <Link color="foreground" href="/calculation">
                             Calculation
+                        </Link>
+                    </NavbarItem>
+                    <NavbarItem>
+                        <Link color="foreground" href="/prediction">
+                            Prediction
                         </Link>
                     </NavbarItem>
                 </NavbarContent>

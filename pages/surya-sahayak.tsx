@@ -1,7 +1,9 @@
 import { Card, Button, Input } from "@nextui-org/react";
 import Accordion from "@/components/Accordion";
+import { useState } from "react";
 
 export default function Information() {
+    const [prompt, setPrompt] = useState("");
     return (
         <div
             // style={{ height: "calc(100vh - 150px)" }}
@@ -17,8 +19,53 @@ export default function Information() {
                     resources
                 </p>
                 <div className="flex flex-row space-x-5">
-                    <Input placeholder="Enter your prompt..." />
-                    <Button variant="bordered">Submit</Button>
+                    <Input
+                        placeholder="Enter your prompt..."
+                        onChange={(e) => setPrompt(e.target.value)}
+                    />
+                    <Button
+                        variant="bordered"
+                        onClick={() => {
+                            fetch(
+                                // `https://ddfd-103-97-166-170.ngrok-free.app/` +
+                                //     new URLSearchParams({
+                                //         type: "llm",
+                                //         src: "en",
+                                //         query: prompt,
+                                //     }),
+                                // {
+                                //     method: "GET",
+                                //     headers: {
+                                //         "ngrok-skip-browser-warning": "true",
+                                //     },
+                                // }
+                                // // {
+                                // //     method: "POST",
+                                // //     body: JSON.stringify({
+                                // //         type: "llm",
+                                // //         src: "en",
+                                // //         query: prompt,
+                                // //     }),
+                                // // }
+                                "/api/proxy/",
+                                {
+                                    method: "POST",
+                                    body: JSON.stringify({
+                                        type: "llm",
+                                        src: "en",
+                                        query: prompt,
+                                    }),
+                                }
+                            ).then((res) => {
+                                console.log(res);
+                                res.json().then((data) => {
+                                    console.log(data);
+                                });
+                            });
+                        }}
+                    >
+                        Submit
+                    </Button>
                 </div>
                 <Card className="p-5">
                     <p>Waiting for prompt...</p>
