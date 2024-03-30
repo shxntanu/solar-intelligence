@@ -6,10 +6,22 @@ import {
     NavbarItem,
     Link,
 } from "@nextui-org/react";
+import {
+    Dropdown,
+    DropdownTrigger,
+    DropdownMenu,
+    DropdownSection,
+    DropdownItem,
+    Button,
+    cn,
+} from "@nextui-org/react";
 
 export default function Nav() {
     return (
-        <Navbar isBordered>
+        <Navbar
+            isBordered
+            style={{ position: "fixed", bottom: "10px", width: "100%" }}
+        >
             <NavbarContent justify="start">
                 <NavbarBrand className="">
                     <Link href="/">
@@ -18,43 +30,65 @@ export default function Nav() {
                 </NavbarBrand>
                 <NavbarContent className="hidden sm:flex gap-3" justify="end">
                     <NavbarItem>
-                        <Link color="foreground" href="/visualization">
-                            Visualization
-                        </Link>
-                    </NavbarItem>
-                    <NavbarItem>
-                        <Link
-                            href="/optimization"
-                            // aria-current="page"
-                            color="foreground"
-                        >
-                            Optimization
-                        </Link>
-                    </NavbarItem>
-                    <NavbarItem>
-                        <Link color="foreground" href="/forecasting">
-                            Forecasting
-                        </Link>
-                    </NavbarItem>
-                    <NavbarItem isActive>
-                        <Link color="primary" href="/surya-sahayak">
-                            Surya Sahayak
-                        </Link>
-                    </NavbarItem>
-                    <NavbarItem>
-                        <Link color="foreground" href="/data-entry">
-                            Data Entry
-                        </Link>
-                    </NavbarItem>
-                    <NavbarItem>
-                        <Link color="foreground" href="/calculation">
-                            Calculation
-                        </Link>
-                    </NavbarItem>
-                    <NavbarItem>
-                        <Link color="foreground" href="/prediction">
-                            Prediction
-                        </Link>
+                        <Dropdown>
+                            <DropdownTrigger>
+                                <Button variant="flat" color="primary">
+                                    Go to Section
+                                </Button>
+                            </DropdownTrigger>
+                            <DropdownMenu
+                                variant="faded"
+                                aria-label="Dropdown menu with description"
+                            >
+                                <DropdownSection
+                                    title="Customer Side"
+                                    showDivider
+                                >
+                                    <DropdownItem key="surya-sahayak">
+                                        <Link href="/surya-sahayak">
+                                            Surya Sahayak
+                                        </Link>
+                                    </DropdownItem>
+                                    <DropdownItem key="data-entry">
+                                        <Link href="/data-entry">
+                                            Data Entry
+                                        </Link>
+                                    </DropdownItem>
+                                    <DropdownItem key="calculation">
+                                        <Link href="/calculation">
+                                            Calculation
+                                        </Link>
+                                    </DropdownItem>
+                                    <DropdownItem key="prediction">
+                                        <Link href="/prediction">
+                                            Prediction
+                                        </Link>
+                                    </DropdownItem>
+                                </DropdownSection>
+                                <DropdownSection title="Vendor Side">
+                                    <DropdownItem key="visualization">
+                                        <Link href="/visualization">
+                                            Visualization
+                                        </Link>
+                                    </DropdownItem>
+                                    <DropdownItem key="optimization">
+                                        <Link href="/optimization">
+                                            Optimization
+                                        </Link>
+                                    </DropdownItem>
+                                    <DropdownItem key="forecasting">
+                                        <Link href="/forecasting">
+                                            Forecasting
+                                        </Link>
+                                    </DropdownItem>
+                                    <DropdownItem key="vendor-onboarding">
+                                        <Link href="/vendor-onboarding">
+                                            Vendor Onboarding
+                                        </Link>
+                                    </DropdownItem>
+                                </DropdownSection>
+                            </DropdownMenu>
+                        </Dropdown>
                     </NavbarItem>
                 </NavbarContent>
             </NavbarContent>
