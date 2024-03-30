@@ -21,7 +21,7 @@ const HomeSection = () => {
                         className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
                         style={{ color: "#19C964" }}
                     >
-                        Tata Power
+                        TechFiesta
                     </h1>
                     <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
                         Solar Intelligence
@@ -51,7 +51,7 @@ const HomeSection = () => {
                     </a>
                 </div>
                 <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                    <Lottie options={defaultOptions} height={300} width={300} />
+                    {/* <Lottie options={defaultOptions} height={300} width={300} /> */}
                 </div>
             </div>
         </section>
