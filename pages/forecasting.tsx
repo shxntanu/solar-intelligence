@@ -154,7 +154,15 @@ function Forecasting() {
     };
 
     return (
-        <div>
+        <div style={{ height: "calc(100vh - 150px)" }}>
+            <h1 className="pt-5 font-bold text-3xl pb-2 flex items-center justify-center">
+                Forecasting
+            </h1>
+            <p className="flex items-center justify-center text-center">
+                This is where end users can input the specifications that they
+                want and <br /> get an estimate of the annual savings they can
+                make
+            </p>
             <div className="flex-grow flex flex-col items-center justify-center py-10 gap-10">
                 <Card className="w-[800px] items-center justify-center pb-10">
                     <CardHeader className="flex flex-col gap-3 pt-10">
