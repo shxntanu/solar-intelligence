@@ -8,6 +8,7 @@ import {
     Input,
 } from "@nextui-org/react";
 import axios from "axios";
+import { ApiService } from "@/config/api/ApiService";
 
 interface CardData {
     id: number;
@@ -36,9 +37,18 @@ export default function Optimization() {
 
     const fetchUser = async () => {
         try {
-            const response = await axios.post(`/api/optimize`, {
-                user_id: userInput,
-            });
+            const response = await axios.post(
+                `/api/optimize`,
+                {
+                    user_id: userInput,
+                },
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "ngrok-skip-browser-warning": "true",
+                    },
+                }
+            );
 
             if (response.data.status === false) {
                 alert("User not found");
@@ -53,17 +63,10 @@ export default function Optimization() {
 
     const fetchSingleUser = async () => {
         try {
-            const response = await axios.get(
-                `https://mindspark-express-backend.onrender.com/api/ml/singleUser/${userInput}`,
-                {
-                    headers: {
-                        "Access-Control-Allow-Origin":
-                            "https://mindspark-23-ml.onrender.com",
-                        "Access-Control-Allow-Methods":
-                            "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-                    },
-                }
-            );
+            const response = await ApiService.get("", {
+                type: "optimize",
+                user_id: userInput,
+            });
 
             if (response.data.status === false) {
                 alert("User not found");

@@ -4,6 +4,8 @@ import { useState } from "react";
 
 export default function Information() {
     const [prompt, setPrompt] = useState("");
+    const [response, setResponse] = useState(undefined);
+
     return (
         <div
             // style={{ height: "calc(100vh - 150px)" }}
@@ -27,7 +29,7 @@ export default function Information() {
                         variant="bordered"
                         onClick={() => {
                             fetch(
-                                // `https://ddfd-103-97-166-170.ngrok-free.app/` +
+                                // `https://a3ca-103-97-166-170.ngrok-free.app/` +
                                 //     new URLSearchParams({
                                 //         type: "llm",
                                 //         src: "en",
@@ -39,20 +41,20 @@ export default function Information() {
                                 //         "ngrok-skip-browser-warning": "true",
                                 //     },
                                 // }
-                                // // {
-                                // //     method: "POST",
-                                // //     body: JSON.stringify({
-                                // //         type: "llm",
-                                // //         src: "en",
-                                // //         query: prompt,
-                                // //     }),
-                                // // }
-                                "/api/proxy/",
+                                // {
+                                //     method: "POST",
+                                //     body: JSON.stringify({
+                                //         type: "llm",
+                                //         src: "en",
+                                //         query: prompt,
+                                //     }),
+                                // }
+                                "/api/proxy",
                                 {
                                     method: "POST",
                                     body: JSON.stringify({
                                         type: "llm",
-                                        src: "en",
+                                        src: "mr",
                                         query: prompt,
                                     }),
                                 }
@@ -60,6 +62,7 @@ export default function Information() {
                                 console.log(res);
                                 res.json().then((data) => {
                                     console.log(data);
+                                    setResponse(data.response);
                                 });
                             });
                         }}
@@ -68,7 +71,7 @@ export default function Information() {
                     </Button>
                 </div>
                 <Card className="p-5">
-                    <p>Waiting for prompt...</p>
+                    <p>{response ?? "Waiting for prompt..."}</p>
                 </Card>
                 <Accordion />
                 <Accordion />

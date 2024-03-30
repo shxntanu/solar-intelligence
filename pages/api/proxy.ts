@@ -7,19 +7,21 @@ export default async function handler(
 ) {
     try {
         if (req.method == "POST") {
-            const { type, src, query } = req.body;
+            const { type, src, query } = JSON.parse(req.body);
 
-            const response: AxiosResponse = await axios.get(
-                `https://ddfd-103-97-166-170.ngrok-free.app/?type=${type}&src=${src}&query=${query}`,
-                {
-                    headers: {
-                        "ngrok-skip-browser-warning": "true",
-                    },
-                }
-            );
-
-            const data = response.data;
-            res.status(200).json(data);
+            axios
+                .get(
+                    `https://a3ca-103-97-166-170.ngrok-free.app/?type=${type}&src=${src}&query=${query}`,
+                    // `https://a3ca-103-97-166-170.ngrok-free.app/?type=llm&src=en&query=hello`,
+                    {
+                        headers: {
+                            "ngrok-skip-browser-warning": "true",
+                        },
+                    }
+                )
+                .then((response: AxiosResponse) => {
+                    res.status(response.status).json(response.data);
+                });
         } else {
             res.status(405).json({ error: "Method Not Allowed" });
         }
