@@ -22,11 +22,11 @@ export default function Nav() {
                             Visualization
                         </Link>
                     </NavbarItem>
-                    <NavbarItem isActive>
+                    <NavbarItem>
                         <Link
                             href="/optimization"
-                            aria-current="page"
-                            color="primary"
+                            // aria-current="page"
+                            color="foreground"
                         >
                             Optimization
                         </Link>
@@ -34,6 +34,21 @@ export default function Nav() {
                     <NavbarItem>
                         <Link color="foreground" href="/forecasting">
                             Forecasting
+                        </Link>
+                    </NavbarItem>
+                    <NavbarItem isActive>
+                        <Link color="primary" href="/surya-sahayak">
+                            Surya Sahayak
+                        </Link>
+                    </NavbarItem>
+                    <NavbarItem>
+                        <Link color="foreground" href="/data-entry">
+                            Data Entry
+                        </Link>
+                    </NavbarItem>
+                    <NavbarItem>
+                        <Link color="foreground" href="/calculation">
+                            Calculation
                         </Link>
                     </NavbarItem>
                 </NavbarContent>
