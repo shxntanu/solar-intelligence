@@ -101,7 +101,7 @@ function Visualization() {
       category,
       numericData,
     });
-    
+
     if (region === "global") {
       if (
         category &&

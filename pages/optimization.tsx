@@ -36,15 +36,15 @@ export default function App() {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.post(`/api/optimize`, {
-        user_id: userInput,
-      });
+      const response = await axios.get(
+        `http://localhost:3001/api/ml/optimization/${userInput}`
+      );
 
       if (response.data.status === false) {
         alert("User not found");
         return;
       }
-      console.log(response);
+
       setCardData(response.data.response);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -54,14 +54,7 @@ export default function App() {
   const fetchSingleUser = async () => {
     try {
       const response = await axios.get(
-        `https://mindspark-express-backend.onrender.com/api/ml/singleUser/${userInput}`,
-        {
-          headers: {
-            "Access-Control-Allow-Origin":
-              "https://mindspark-23-ml.onrender.com",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-          },
-        }
+        `http://localhost:3001/api/ml/singleUser/${userInput}`
       );
 
       if (response.data.status === false) {

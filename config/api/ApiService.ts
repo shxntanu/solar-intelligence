@@ -6,11 +6,11 @@ import { getItem } from "@/config/utils/localStorageControl";
 // });
 
 const client = axios.create({
-  baseURL: "https://mindspark-express-backend.onrender.com/api/",
-});
-
-const mlClient = axios.create({
-  baseURL: "https://mindspark-express-backend.onrender.com/api/",
+  baseURL: "http://127.0.0.1:3001/api/",
+  // headers: {
+  //     Authorization: `Bearer ${getItem("access_token")}`,
+  //     // 'Content-Type': 'application/json',
+  // },
 });
 
 class ApiService {
