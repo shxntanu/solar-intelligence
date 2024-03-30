@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Havells",
+        "costPerKwh": 14097.5,
+        "link": "https://www.havells.com/en/consumer/solar/solar-on-grid-inverter-and-solutions/solar-on-grid-inverter/enviro-gti-8800-tx.html"
+    },
+    {
+        "id": 2,
+        "name": "Waaree",
+        "costPerKwh": 7093.3,
+        "link": "https://shop.waaree.com/waaree-3kw-single-phase-solar-on-grid-inverter/"
+    },
+    {
+        "id": 3,
+        "name": "Loom Solar",
+        "costPerKwh": 7262.5,
+        "link": "https://www.loomsolar.com/collections/solar-inverters/products/fusion-4-kw-on-grid-solar-inverter"
+    }
+]

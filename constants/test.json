@@ -1,0 +1,59 @@
+[
+    {
+        "Solar Tech Pvt": {
+            "monocrystalline": {
+                "costPerKw": 10000,
+                "savingPerKw": 1600,
+                "energyProduced": 120
+            },
+            "polycrystalline": {
+                "costPerKw": 4775.01,
+                "savingPerKw": 1229.52,
+                "energyProduced": 111.05
+            },
+            "thinFilm": {
+                "costPerKw": 6332.73,
+                "savingPerKw": 1480.43,
+                "energyProduced": 123.75
+            }
+        }
+    },
+    {
+        "Sun Wave Ltd": {
+            "monocrystalline": {
+                "costPerKw": 3961.7,
+                "savingPerKw": 1436.11,
+                "energyProduced": 130.29
+            },
+            "polycrystalline": {
+                "costPerKw": 6908.57,
+                "savingPerKw": 1838.77,
+                "energyProduced": 18
+            },
+            "thinFilm": {
+                "costPerKw": 6332.73,
+                "savingPerKw": 101.01,
+                "energyProduced": 20.25
+            }
+        }
+    },
+    {
+        "Green Energy": {
+            "monocrystalline": {
+                "costPerKw": 6222.22,
+                "savingPerKw": 1111.11,
+                "energyProduced": 182.55
+            },
+            "polycrystalline": {
+                "costPerKw": 5842.37,
+                "savingPerKw": 617.65,
+                "energyProduced": 103.71
+            },
+            "thinFilm": {
+                "costPerKw": 7205.22,
+                "savingPerKw": 1580.2,
+                "energyProduced": 131.25
+            }
+        }
+    }
+]

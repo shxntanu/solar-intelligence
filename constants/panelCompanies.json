@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Tata Power",
+        "panel_types": [
+            {
+                "name": "Monocrystalline",
+                "costPerKwh": 1.05
+            },
+            {
+                "name": "Polycrystalline",
+                "costPerKwh": 0.96
+            },
+            {
+                "name": "Thin Film",
+                "costPerKwh": 0.88
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Waaree",
+        "panel_types": [
+            {
+                "name": "Monocrystalline",
+                "costPerKwh": 1.2
+            },
+            {
+                "name": "Polycrystalline",
+                "costPerKwh": 1
+            },
+            {
+                "name": "Thin Film",
+                "costPerKwh": 0.76
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Adani Power",
+        "panel_types": [
+            {
+                "name": "Monocrystalline",
+                "costPerKwh": 1.09
+            },
+            {
+                "name": "Polycrystalline",
+                "costPerKwh": 0.89
+            },
+            {
+                "name": "Thin Film",
+                "costPerKwh": 0.78
+            }
+        ]
+    }
+]
