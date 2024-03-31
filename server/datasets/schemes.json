@@ -1,0 +1,580 @@
+{
+  "states": {
+    "Andhra Pradesh": {
+      "subsidies_percentage": "10%",
+      "tax_benefits": "Income tax benefits for solar power generation including accelerated depreciation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "AP Renewable Energy Development Corporation (APREDC) Scheme",
+            "description": "Offers low-interest loans for solar installations with flexible repayment options."
+          },
+          {
+            "name": "Andhra Pradesh Green Energy Corporation (APGECL) Scheme",
+            "description": "Provides financial assistance and subsidies for solar projects through state schemes."
+          }
+        ]
+      }
+    },
+    "Arunachal Pradesh": {
+      "subsidies_percentage": "Varies based on project type.",
+      "tax_benefits": "Tax exemptions and concessions for solar power projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Arunachal Pradesh Energy Development Agency (APEDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for rural areas."
+          },
+          {
+            "name": "Rural Electrification Corporation (REC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations in rural areas."
+          }
+        ]
+      }
+    },
+    "Assam": {
+      "subsidies_percentage": "Ranges from 20% to 50%.",
+      "tax_benefits": "Tax rebates and incentives for solar energy producers.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Assam Power Distribution Company Limited (APDCL) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies based on project scale."
+          },
+          {
+            "name": "Assam Energy Development Agency (AEDA) Scheme",
+            "description": "Provides financial assistance and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "West Bengal": {
+      "subsidies_percentage": "Varies based on project type.",
+      "tax_benefits": "Tax benefits and concessions for solar power projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "West Bengal Renewable Energy Development Agency (WBREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for rural areas."
+          },
+          {
+            "name": "West Bengal Green Energy Corporation (WBGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Bihar": {
+      "subsidies_percentage": "Up to 30%.",
+      "tax_benefits": "Tax incentives and exemptions for solar energy producers.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Bihar Renewable Energy Development Agency (BREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Bihar Green Energy Corporation (BGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Chhattisgarh": {
+      "subsidies_percentage": "Varies based on project scale.",
+      "tax_benefits": "Tax benefits including exemption from electricity duty for solar projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Chhattisgarh State Renewable Energy Development Agency (CREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies based on project scale."
+          },
+          {
+            "name": "Chhattisgarh Green Energy Corporation (CGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Goa": {
+      "subsidies_percentage": "10% to 50% depending on project type.",
+      "tax_benefits": "Tax exemptions and incentives for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Goa Renewable Energy Development Agency (GREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Goa Green Energy Corporation (GGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Gujarat": {
+      "subsidies_percentage": "Ranges from 20% to 50%.",
+      "tax_benefits": "Tax rebates and incentives for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Gujarat Energy Development Agency (GEDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for commercial buildings."
+          },
+          {
+            "name": "Gujarat Green Energy Corporation (GGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Haryana": {
+      "subsidies_percentage": "Up to 30%.",
+      "tax_benefits": "Tax incentives and exemptions for solar energy producers.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Haryana Renewable Energy Development Agency (HAREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for industrial buildings."
+          },
+          {
+            "name": "Haryana Green Energy Corporation (HGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Himachal Pradesh": {
+      "subsidies_percentage": "Varies based on project type.",
+      "tax_benefits": "Tax benefits and concessions for solar power projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Himachal Pradesh Energy Development Agency (HPEDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Himachal Pradesh Green Energy Corporation (HPGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Jharkhand": {
+      "subsidies_percentage": "Ranges from 20% to 50%.",
+      "tax_benefits": "Tax rebates and incentives for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Jharkhand Renewable Energy Development Agency (JREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Jharkhand Green Energy Corporation (JGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Karnataka": {
+      "subsidies_percentage": "Up to 30%.",
+      "tax_benefits": "Tax incentives and exemptions for solar energy producers.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Karnataka Renewable Energy Development Agency (KREDL) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Karnataka Green Energy Corporation (KGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Kerala": {
+      "subsidies_percentage": "10% to 50% depending on project type.",
+      "tax_benefits": "Tax exemptions and incentives for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Kerala State Electricity Board (KSEB) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for commercial buildings."
+          },
+          {
+            "name": "Kerala Green Energy Corporation (KGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Madhya Pradesh": {
+      "subsidies_percentage": "Varies based on project scale.",
+      "tax_benefits": "Tax benefits including exemption from electricity duty for solar projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Madhya Pradesh Urja Vikas Nigam (MPUVN) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for industrial buildings."
+          },
+          {
+            "name": "Madhya Pradesh Green Energy Corporation (MPGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Maharashtra": {
+      "subsidies_percentage": "Ranges from 20% to 50%.",
+      "tax_benefits": "Tax rebates and incentives for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Maharashtra Energy Development Agency (MEDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Maharashtra Green Energy Corporation (MGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Manipur": {
+      "subsidies_percentage": "Ranges from 20% to 40%.",
+      "tax_benefits": "Tax rebates and incentives for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Manipur Renewable Energy Development Agency (MREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Manipur Green Energy Corporation (MGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Meghalaya": {
+      "subsidies_percentage": "Varies based on project type.",
+      "tax_benefits": "Tax benefits and concessions for solar power projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Meghalaya Energy Development Agency (MEDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Meghalaya Green Energy Corporation (MGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Mizoram": {
+      "subsidies_percentage": "10% to 50% depending on project type.",
+      "tax_benefits": "Tax exemptions and incentives for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Mizoram State Power and Electricity Department (MSPED) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for commercial buildings."
+          },
+          {
+            "name": "Mizoram Green Energy Corporation (MGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Nagaland": {
+      "subsidies_percentage": "Up to 30%.",
+      "tax_benefits": "Tax incentives and exemptions for solar energy producers.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Nagaland Renewable Energy Development Agency (NREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for industrial buildings."
+          },
+          {
+            "name": "Nagaland Green Energy Corporation (NGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Odisha": {
+      "subsidies_percentage": "Varies based on project scale.",
+      "tax_benefits": "Tax benefits including exemption from electricity duty for solar projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Odisha Renewable Energy Development Agency (OREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for commercial buildings."
+          },
+          {
+            "name": "Odisha Green Energy Corporation (OGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Punjab": {
+      "subsidies_percentage": "10% to 50% depending on project type.",
+      "tax_benefits": "Tax exemptions and incentives for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Punjab Energy Development Agency (PEDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Punjab Green Energy Corporation (PGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Rajasthan": {
+      "subsidies_percentage": "Ranges from 20% to 50%.",
+      "tax_benefits": "Tax rebates and incentives for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Rajasthan Renewable Energy Corporation Limited (RRECL) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for commercial buildings."
+          },
+          {
+            "name": "Rajasthan Green Energy Corporation (RGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Sikkim": {
+      "subsidies_percentage": "Up to 30%.",
+      "tax_benefits": "Tax incentives and exemptions for solar energy producers.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Sikkim Renewable Energy Development Agency (SREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for industrial buildings."
+          },
+          {
+            "name": "Sikkim Green Energy Corporation (SGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Tamil Nadu": {
+      "subsidies_percentage": "Varies based on project scale.",
+      "tax_benefits": "Tax benefits including exemption from electricity duty for solar projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Tamil Nadu Energy Development Agency (TEDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Tamil Nadu Green Energy Corporation (TNGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Telangana": {
+      "subsidies_percentage": "Ranges from 20% to 50%.",
+      "tax_benefits": "Tax rebates and incentives for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Telangana Renewable Energy Development Agency (TREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for commercial buildings."
+          },
+          {
+            "name": "Telangana Green Energy Corporation (TGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Tripura": {
+      "subsidies_percentage": "10% to 50% depending on project type.",
+      "tax_benefits": "Tax exemptions and incentives for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Tripura Renewable Energy Development Agency (TREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Tripura Green Energy Corporation (TGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Mumbai": {
+      "subsidies_percentage": "25% to 60% depending on project scale.",
+      "tax_benefits": "Tax exemptions and credits for solar power generation.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Maharashtra Energy Development Agency (MEDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Mumbai Green Energy Corporation (MGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Pune": {
+      "subsidies_percentage": "30% to 70% depending on project type.",
+      "tax_benefits": "Tax rebates and incentives for solar energy producers.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Pune Solar Energy Development Corporation (PSEDC) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for commercial buildings."
+          },
+          {
+            "name": "Pune Green Energy Corporation (PGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Nagpur": {
+      "subsidies_percentage": "20% to 55% depending on project scale.",
+      "tax_benefits": "Tax benefits and exemptions for solar power projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Nagpur Renewable Energy Development Agency (NREDA) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for industrial buildings."
+          },
+          {
+            "name": "Nagpur Green Energy Corporation (NGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Aurangabad": {
+      "subsidies_percentage": "35% to 65% depending on project type.",
+      "tax_benefits": "Tax benefits and concessions for solar power projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Aurangabad Solar Energy Development Corporation (ASEDC) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Aurangabad Green Energy Corporation (AGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Nanded": {
+      "subsidies_percentage": "40% to 75% depending on project scale.",
+      "tax_benefits": "Tax rebates and incentives for solar energy producers.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Nanded Solar Energy Development Corporation (NSEDC) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for commercial buildings."
+          },
+          {
+            "name": "Nanded Green Energy Corporation (NGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Kolhapur": {
+      "subsidies_percentage": "30% to 60% depending on project type.",
+      "tax_benefits": "Tax benefits and exemptions for solar power projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Kolhapur Solar Energy Development Corporation (KSEDC) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Kolhapur Green Energy Corporation (KGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Solapur": {
+      "subsidies_percentage": "25% to 55% depending on project scale.",
+      "tax_benefits": "Tax rebates and incentives for solar energy producers.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Solapur Solar Energy Development Corporation (SSEDC) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for commercial buildings."
+          },
+          {
+            "name": "Solapur Green Energy Corporation (SGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Nashik": {
+      "subsidies_percentage": "20% to 50% depending on project type.",
+      "tax_benefits": "Tax benefits and concessions for solar power projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Nashik Solar Energy Development Corporation (NSEDC) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Nashik Green Energy Corporation (NGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Amravati": {
+      "subsidies_percentage": "30% to 65% depending on project scale.",
+      "tax_benefits": "Tax benefits and exemptions for solar power projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Amravati Solar Energy Development Corporation (ASEDC) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Amravati Green Energy Corporation (AGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    },
+    "Sangli": {
+      "subsidies_percentage": "35% to 70% depending on project type.",
+      "tax_benefits": "Tax benefits and concessions for solar power projects.",
+      "loans_details": {
+        "schemes": [
+          {
+            "name": "Sangli Solar Energy Development Corporation (SSEDC) Scheme",
+            "description": "Offers low-interest loans for solar projects with subsidies for residential buildings."
+          },
+          {
+            "name": "Sangli Green Energy Corporation (SGEC) Scheme",
+            "description": "Provides financial support and subsidies for solar installations through state schemes."
+          }
+        ]
+      }
+    }
+  }
+}
