@@ -1,0 +1,40 @@
+{
+    "vendors": [
+        {
+            "name": "vendor1",
+            "url": "http://vendor1.com"
+        },
+        {
+            "name": "vendor2",
+            "url": "http://vendor2.com"
+        }
+    ],
+    "states":{
+        "state1": {
+            "name": "state1",
+            "vendors": [
+                {
+                    "name": "vendor1",
+                    "url": "http://vendor1.com"
+                },
+                {
+                    "name": "vendor2",
+                    "url": "http://vendor2.com"
+                }
+            ]
+        },
+        "state2": {
+            "name": "state2",
+            "vendors": [
+                {
+                    "name": "vendor1",
+                    "url": "http://vendor1.com"
+                },
+                {
+                    "name": "vendor2",
+                    "url": "http://vendor2.com"
+                }
+            ]
+        }
+    }
+}

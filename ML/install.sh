@@ -1,0 +1,1 @@
+pip install torch farm-haystack flask   googletrans
