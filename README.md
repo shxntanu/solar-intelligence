@@ -1,4 +1,10 @@
-# Solar Intelligence
+<div align="center">
+
+# ☀️ Solar Intelligence
+
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmZzNnRicm84bzQ1NHozc25tcjZibDVtMXlhcnhyY3U3a21kYmowdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7OjAGGPFftxGHLDA0J/giphy.gif"/>
+
+</div>
 
 ## Introduction
 
