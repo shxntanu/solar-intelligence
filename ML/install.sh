@@ -1,1 +1,1 @@
-pip install torch farm-haystack flask   googletrans
+pip install torch farm-haystack flask googletrans scikit-learn
