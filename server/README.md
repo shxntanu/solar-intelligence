@@ -1,3 +1,5 @@
+# Express Backend
+
 This API provides endpoints for retrieving global data on solar installations, categorized by region, installation type, panel type, type of installation, installer name, cost, capacity, energy produced, maintenance frequency, warranty years, and annual savings.
 
 # Endpoints
