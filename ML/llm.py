@@ -7,7 +7,7 @@ from pprint import pprint
 from json import loads, dumps
 from translator import translate_text
 
-HF_TOKEN = "your_huggingface_token_here"
+HF_TOKEN = "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"
 
 with open('rag.json', 'r') as f:
     data = loads(f.read())
